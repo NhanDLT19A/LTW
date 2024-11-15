@@ -129,7 +129,7 @@ slider
     background-color: rgba(255, 255, 255, 1);
 }
 /* end slider */
-.home-product, .home-product2{
+.home-product, .home-product2, .giohang{
     padding: 50px 0px;
     background-color: #f8f2e8
 }
@@ -232,6 +232,87 @@ slider
     border-radius: 10px;
     color: #fff;
     background: #3d1a1a;
+}
+.wrapper{
+    padding: 0 30px;
+}
+.wrapper h1{
+    color: #333333;
+    padding: 0px 0px 15px 0px;
+    margin: 0px 0px 15px 0px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.table-wrap{
+    max-width: 100%;
+    overflow: auto;
+}
+.cart__row {
+    position: relative;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e6e6e6;
+}
+.cart-table{
+    width: 100%;
+}
+.cart-table td{
+    padding: 30px 15px;
+    border: none;
+}
+.cart-table input{
+    display: block;
+    background: none;
+    text-align: center;
+    width: 60%;
+    padding: 5px 25px;
+    margin: auto;
+    border: 1px solid #e6e6e6;
+    max-width: 100%;
+    border-radius: 3px;
+}
+.cart__row__sum{
+    display: flex;
+    width: 100%;
+}
+.cart__row__sum p{
+    margin: 0 0 15px 0;
+}
+.cart__row__sum em{
+    text-align: right;
+    font-style: italic;
+}
+.twothirds{
+    width: 66.66%;
+}
+.onethirds{
+    width: 33%;
+    text-align: right;
+    padding-right: 20px;
+}
+.cart__subtotal-title{
+    font-size: 14px;
+}
+.cart__subtotal{
+    margin: 0 0 0 10px;
+    display: inline;
+    font-size: 1.57143em;
+}
+.checkout_btn{
+    display: inline-block;
+    padding: 8px 10px;
+    width: auto;
+    margin: 0;
+    line-height: 1.42;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #3d1a1a;
+    color: #fff;
 }
 /*=======================Login=========================*/
 
