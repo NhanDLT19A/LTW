@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "UTMAvoBold";
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 60px;
+    height: 70px;
+    align-items: center;
+    margin-bottom: 50px;
+   
+}
+.logo{
+    flex: 1;
+    height: 70px;
+}
+.menu{
+    flex: 2;
+    display: flex;
+}
+.menu > li{
+    padding: 0 12px;
+    position: relative;
+}
+.menu > li:hover .sub-menu{
+    visibility: visible; 
+    top: 30px;
+}
+.sub-menu {
+    position: absolute;
+    width: 200px;
+    border: 1px solid #3d1a1a;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+    top: 50px;
+    transition: visibility 0.15s, top 0.15s;
+    z-index: 990;
+    background-color: #3d1a1a;
+}
+.sub-menu a{
+    color: #ccc;    
+}
+.menu >li a{
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    line-height: 25px;
+}
+.others{
+    flex: 1;
+    display: flex;
+}
+.others > li{
+    padding: 0 12px; 
+}
+.others >li:first-child {
+    position: relative;
+}
+.others >li:first-child input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+.others >li:first-child i{
+    position: absolute;
+    right: 10px;
+}
+.banner{
+    min-height: 200px;
+    max-height: 400px;
+    overflow: hidden;
+}
+/*
+slider 
+*/
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+/* end slider */
+.home-product, .home-product2{
+    padding: 50px 0px;
+    background-color: #f8f2e8
+}
+
+.center-header{
+    width: 100%;
+    text-align: center;
+
+}
+.center-header h2{
+
+    font-size: 32px;
+    color: #c0c906;
+    margin-bottom: 0;
+}
+.center-header .banh-icon{
+    min-height: 30px;
+}
+.flex-uniform{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.card-wrapper{
+    width: 25%;
+    padding: 0 15px;
+}
+.card-product{
+
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background: #fff;
+}
+.card-image{
+    width: 100%;
+    
+    position: relative;
+}
+.img-card-product{
+    width: 100%;
+    transform: scale(1);
+}
+.card-title{
+    text-align: center;
+    margin: 10px 0;
+
+}
+
+.card-title > a {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #333333;
+}
+.card-price{
+    display: flex;
+}
+.card-price .price{
+    display: inline-block;
+    padding: 0px 15px;
+    height: 40px;
+    line-height: 40px;
+    background: #c0c906;
+    color: #fff;
+    border-top-right-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+.card-price .action{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.btn-add-cart{
+    height: 40px;
+    line-height: 40px;
+    width: 45px;
+    padding: 0px;
+    margin: 0px 0px 0px -7px;
+    background: #3d1a1a;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    outline: 0px;
+}
+.btn-viewmore-tab {
+    margin-top: 20px;
+    text-align: center;
+}
+.btn-more{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #fff;
+    background: #3d1a1a;
+}
+/*=======================Login=========================*/
+
+
+/* Định dạng container */
+.login-container {
+    text-align: center;
+    background-color: #f5efe4;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%; /* Xóa giới hạn chiều rộng */
+    margin: 0 auto;
+}
+
+/* Đặt chiều rộng của nội dung bên trong */
+.login-container form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề */
+.login-container h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Các trường input */
+.login-container input[type="username"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Nút Đăng nhập */
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3c0d0d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #591515;
+}
+
+/* Link phụ */
+.login-container a {
+    display: block;
+    color: #3c0d0d;
+    text-decoration: none;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+/* Link hover */
+.login-container a:hover {
+    text-decoration: underline;
+}
