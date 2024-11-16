@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="checkout_content">
+
+        <div class="wrap">
+            <div class="main">
+                <div class="main-header">
+
+                    <a href="/" class="logo">
+
+                        <h1 class="logo-text">Anh Hòa Bakery</h1>
+
+                    </a>
+
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/cart">Giỏ hàng</a>
+                        </li>
+
+                        <li class="breadcrumb-item breadcrumb-item-current">
+
+                            Thông tin vận chuyển
+
+                        </li>
+                        <li class="breadcrumb-item ">
+
+                            Phương thức thanh toán
+
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="main-content">
+
+
+                    <div class="step-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Thông tin thanh toán</h2>
+                        </div>
+                        <div class="section-customer-information ">
+
+                            <input name="utf8" type="hidden" value="✓">
+                            
+                            <p class="section-content-text">
+                                Bạn đã có tài khoản?
+                                <a
+                                    href="#">Đăng
+                                    nhập</a>
+                            </p>
+
+
+                            <div class="fieldset">
+
+
+                                <div class="field ">
+                                    <div class="field-input-wrapper">
+                                        <label class="field-label" for="billing_address_full_name">Họ và
+                                            tên</label>
+                                        <input placeholder="Họ và tên" autocapitalize="off" spellcheck="false"
+                                            class="field-input" size="30" type="text"
+                                            id="billing_address_full_name" name="billing_address[full_name]"
+                                            value="" autocomplete="false">
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="field  ">
+                                    <div class="field-input-wrapper">
+                                        <label class="field-label" for="checkout_user_email">Email</label>
+                                        <input autocomplete="false" placeholder="Email" autocapitalize="off"
+                                            spellcheck="false" class="field-input" size="30" type="email"
+                                            id="checkout_user_email" name="checkout_user[email]" value="">
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="field   ">
+                                    <div class="field-input-wrapper">
+                                        <label class="field-label" for="billing_address_phone">Điện
+                                            thoại</label>
+                                        <input autocomplete="false" placeholder="Điện thoại"
+                                            autocapitalize="off" spellcheck="false" class="field-input"
+                                            size="30" maxlength="15" type="tel" id="billing_address_phone"
+                                            name="billing_address[phone]" value="">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="fieldset">
+
+                                <form autocomplete="off" id="form_update_shipping_method" class="field "
+                                    accept-charset="UTF-8" method="post">
+                                    <div class="content-box ">
+
+                                        <div class="gh-wrapper ">
+                                            <span class="gh-label">Giao Hang</span>
+                                        </div>
+
+                                      
+                                        <div class="field   ">
+                                            <div class="field-input-wrapper">
+                                                <label class="field-label"
+                                                    for="billing_address_address1">Địa chỉ</label>
+                                                <input placeholder="Địa chỉ" autocapitalize="off"
+                                                    spellcheck="false" class="field-input" size="30"
+                                                    type="text" id="billing_address_address1"
+                                                    name="billing_address[address1]" value="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="step-footer" id="step-footer-checkout">
+
+
+                        <form id="form_next_step" accept-charset="UTF-8" method="post">
+                            <input name="utf8" type="hidden" value="✓">
+                            <button type="submit" class="step-footer-continue-btn">
+                                <span class="btn-content">Phương thức thanh toán</span>
+                                <i class="btn-spinner icon icon-button-spinner"></i>
+                            </button>
+                        </form>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="sidebar">
+                
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
