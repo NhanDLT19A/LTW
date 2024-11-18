@@ -16,39 +16,34 @@
           <img src="hinhanh/logo.webp" />
         </div>
         <div class="menu">
-          <li><a href="index.html">TRANG CHỦ</a></li>
+          <li><a href="index.php">TRANG CHỦ</a></li>
           <li>
-            <a href="">BÁNH SINH NHẬT</a>
+            <a href="menu/gateaux.php">BÁNH SINH NHẬT</a>
             <ul class="sub-menu">
-              <li><a href="">Gateaux Kem Tươi</a></li>
-              <li><a href="">Bánh Sinh Nhật</a></li>
-              <li><a href="">Bánh Mousse</a></li>
-              <li><a href="">Gateaux Mosse Yogurt</a></li>
+              <li><a href="menu/gateaux.php">Gateaux Kem Tươi</a></li>
+              <li><a href="menu/gateauxbo.php">Gateaux Kem Bơ</a></li>
+              <li><a href="menu/sinhnhat.php">Bánh Sinh Nhật </a></li>
+              <li><a href="menu/mousse.php">Bánh Mousse</a></li>
             </ul>
           </li>
           <li>
             <a href="">BÁNH MỲ & BÁNH MẶN</a>
             <ul class="sub-menu">
-              <li><a href="">Bánh Mỳ</a></li>
-              <li><a href="">Bánh Mặn</a></li>
+              <li><a href="menu/banhmy.php">Bánh Mì</a></li>
+              <li><a href="menu/banhman.php">Bánh Mặn</a></li>
             </ul>
           </li>
           <li>
             <a href="">COOKIES & MINICAKE</a>
             <ul class="sub-menu">
-              <li><a href="">Cookies</a></li>
-              <li><a href="">Mini Cake</a></li>
-            </ul>
+              <li><a href="menu/cookies.html">Cookies</a></li>
+              <li><a href="menu/minicake.html">Mini Cake</a></li>
+            </ul> 
           </li>
-          <li><a href="">TIN TỨC</a></li>
         </div>
         <div class="others">
-          <li>
-            <input placeholder="Tìm kiếm" type="" text />
-            <i class="fas fa-search"></i>
-          </li>
           <li><a class="fa fa-user" href=" "></a></li>
-          <li><a class="fa fa-shopping-bag" href=""></a></li>
+          <li><a class="fa fa-shopping-bag" href="giohang.php"></a></li>
         </div>
       </header>
       <section class="banner">
@@ -66,14 +61,18 @@
           </div>
       </section>
       <div class="login-container">
-        <h1>ĐĂNG NHẬP</h1>
-        <form>
-            <input type="username" placeholder="Tài Khoản" required>
-            <input type="password" placeholder="Mật khẩu" required>
-            <button type="submit">Đăng nhập</button>
-        </form>
-        <a href="index.html">Trở về</a>
-        <a href="#">Đăng kí</a>
-    </div>
+    <h1>ĐĂNG NHẬP</h1>
+    <form action="login.php" method="post">
+        <input type="username" name="username" placeholder="Tài Khoản" required>
+        <input type="password" name="password" placeholder="Mật khẩu" required> 
+        <div class="actions">
+            <label><input type="checkbox" name="remember"> Remember Me</label>
+        </div>
+        <button type="submit">Đăng nhập</button>
+    </form>
+    <a href="index.php">Trở về</a> 
+    <a href="#">Đăng kí</a>
+</div>
+
 </body>
 </html>

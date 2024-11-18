@@ -63,18 +63,7 @@ header{
 .others > li{
     padding: 0 12px; 
 }
-.others >li:first-child {
-    position: relative;
-}
-.others >li:first-child input{
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #333;
-}
-.others >li:first-child i{
-    position: absolute;
-    right: 10px;
-}
+
 .banner{
     min-height: 200px;
     max-height: 400px;
@@ -177,19 +166,18 @@ slider
 .card-title{
     text-align: center;
     margin: 10px 0;
-
 }
 
 .card-title > a {
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* không cần thiết tới chỗ webkit*/
     display: -webkit-box;
     -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    -webkit-box-orient: vertical; 
     height: 20px;
     line-height: 20px;
     font-size: 16px;
     color: #333333;
+    font-weight: bold;
 }
 .card-price{
     display: flex;
@@ -297,6 +285,18 @@ slider
     display: inline;
     font-size: 1.57143em;
 }
+.cart__remove {
+    background-color: #3d1a1a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/*==================CheckOut======================*/
 .checkout_btn{
     display: inline-block;
     padding: 8px 10px;
