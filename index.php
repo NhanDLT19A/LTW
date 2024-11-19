@@ -1,13 +1,13 @@
 <?php
-include('connectdb.php');
 session_start(); // Bắt đầu session
+include('connectdb.php');
 
 // Kiểm tra xem người dùng đã đăng nhập chưa
 if (isset($_SESSION['HoTen'])) {
     $hoTen = $_SESSION['HoTen']; // Lấy tên người dùng từ session
 } else {
     $hoTen = ''; // Nếu chưa đăng nhập, để trống
-}
+}   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,39 @@ if (isset($_SESSION['HoTen'])) {
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script>
+  $(document).ready(function () {
+    $(".btn-add-cart").click(function (e) {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định của nút submit
+
+        var form = $(this).closest("form");
+
+        // Lấy dữ liệu từ các trường hidden trong form
+        var tensp = form.find("input[name='tensp']").val();
+        var dongia = form.find("input[name='dongia']").val();
+        var hinhanh = form.find("input[name='hinhanh']").val();
+        var soluong = form.find("input[name='soluong']").val();
+
+        // Gửi dữ liệu qua AJAX
+        $.post("giohang.php", {
+            add_to_cart: true, // Thêm vào giỏ hàng
+            tensp: tensp,
+            dongia: dongia,
+            hinhanh: hinhanh,
+            soluong: soluong
+        })
+        .done(function (response) {
+            // Chuyển trang đến giỏ hàng
+            window.location.href = "giohang.php"; 
+        })
+        .fail(function () {
+            console.error("Lỗi khi thêm sản phẩm vào giỏ hàng.");
+        });
+    });
+  });
+</script>
+
    
     <title>Trang chủ</title>
   </head>
@@ -63,7 +96,9 @@ if (isset($_SESSION['HoTen'])) {
                 <!-- Hiển thị icon đăng nhập nếu chưa đăng nhập -->
                 <li><a class="fa fa-user" href="login.html"></a></li>
             <?php endif; ?>
-        <li><a class="fa fa-shopping-bag" href="giohang.php"></a></li>
+        <li>
+            <a class="fa fa-shopping-bag" href="giohang.php"><span id="countsp"></span></a>
+        </li>
       </div>
     </header>
     <section class="banner">
@@ -97,29 +132,30 @@ if (isset($_SESSION['HoTen'])) {
                 while($row = $result->fetch_assoc()) {
                     ?>
                     <div class="card-wrapper">
-                         <div class="card-product">
-                             <div class="card-img">
-                                <a href="#">
+                        <div class="card-product">
+                            <form class="card-form" action="giohang.php" method="POST">
+                                <div class="card-img">
                                     <img class="img-card-product" src="<?php echo $row['HinhAnh']; ?>" alt="later">
-                                </a>
-                            </div>
-                            <div class="card-title">
-                                <a href="#">
-                                    <?php echo $row['TenBanh']; ?>
-                                </a>
-                            </div>
-                            <div class="card-price">
-                                <div class="price">
-                                    <?php echo number_format($row['Gia'], 0, ',', '.'); ?> đồng
                                 </div>
-                                <div class="action">
-                                    <div class="btn-add-cart">
-                                        <a class="fa fa-shopping-cart"></a>
+                                <div class="card-title">
+                                    <a><?php echo $row['TenBanh']; ?></a>
+                                </div>
+                                <div class="card-price">
+                                    <div class="price">
+                                        <?php echo number_format($row['Gia'], 0, ',', '.'); ?> đồng
                                     </div>
-                                </div>  
-                            </div>
+                                    <input type="number" name="soluong" min="1" max="10" value="1">
+                                <input type="hidden" name="tensp" value="<?php echo $row['TenBanh']; ?>">
+                                <input type="hidden" name="dongia" value="<?php echo $row['Gia']; ?>">
+                                <input type="hidden" name="hinhanh" value="<?php echo $row['HinhAnh']; ?>">
+                                <button type="submit" name="addcart" value="Đặt hàng" class="btn-add-cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
+
                 <?php
                 }
             } else {
@@ -148,26 +184,26 @@ if (isset($_SESSION['HoTen'])) {
                     ?>
                     <div class="card-wrapper">
                          <div class="card-product">
-                             <div class="card-img">
-                                <a href="#">
-                                    <img class="img-card-product" src="<?php echo $row['HinhAnh']; ?>" alt="later">
-                                </a>
+                             <div class="card-img">                             
+                                    <img class="img-card-product" src="<?php echo $row['HinhAnh']; ?>" alt="later">                               
                             </div>
                             <div class="card-title">
-                                <a href="#">
+                                <a>
                                     <?php echo $row['TenBanh']; ?>
                                 </a>
                             </div>
-                            <div class="card-price">
+                            <form class="card-price" action="" method="POST">
                                 <div class="price">
                                     <?php echo number_format($row['Gia'], 0, ',', '.'); ?> đồng
-                                </div>
-                                <div class="action">
-                                    <div class="btn-add-cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </div>
                                 </div>  
-                            </div>
+                                <input type="number" name="soluong" min="1" max="10" value="1">
+                                <input type="hidden" name="tensp" value="<?php echo $row['TenBanh']; ?>">
+                                <input type="hidden" name="dongia" value="<?php echo $row['Gia']; ?>">
+                                <input type="hidden" name="hinhanh" value="<?php echo $row['HinhAnh']; ?>">
+                                <button type="submit" name="addcart" value="Đặt hàng" class="btn-add-cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 <?php
